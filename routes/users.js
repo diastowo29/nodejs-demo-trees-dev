@@ -25,7 +25,7 @@ router.get('/create/', function(req, res, next) {
 		username: req.body.username,
 		trx: req.body.trx,
 		product_code: req.body.product_code,
-		name: req.body.product_price
+		product_price: req.body.product_price
 	}).then(demo_table_insert => {
 		res.status(200).send({
 			insert: success,
