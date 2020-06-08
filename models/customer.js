@@ -13,5 +13,8 @@ module.exports = (sequelize, type) => {
         twitter: type.STRING(510),
         customer_id: type.STRING(510),
         username: type.STRING(510),
+        trx: type.STRING(510),
+        product_code: type.STRING(510),
+        product_price: type.STRING(510)
     })
 }
