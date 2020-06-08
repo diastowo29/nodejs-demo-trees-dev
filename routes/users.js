@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 	});
 });
 
-router.get('/create/', function(req, res, next) {
+router.post('/create/', function(req, res, next) {
 	demo_table.create({
 		name: req.body.name,
 		telephone: req.body.telephone,
