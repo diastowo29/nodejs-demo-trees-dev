@@ -28,7 +28,7 @@ router.post('/create/', function(req, res, next) {
 		product_price: req.body.product_price
 	}).then(demo_table_insert => {
 		res.status(200).send({
-			insert: success,
+			insert: "success",
 			data: demo_table_insert
 		});
 	});
