@@ -1,5 +1,5 @@
 var express = require('express');
-const { demo_table } = require('./sequelize')
+const { demo_table } = require('../sequelize')
 var router = express.Router();
 
 /* GET users listing. */
