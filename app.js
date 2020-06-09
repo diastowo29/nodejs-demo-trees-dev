@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -10,6 +11,7 @@ const { demo_table } = require('./sequelize')
 const Sequelize = require('sequelize')
 
 var app = express();
+app.use(cors());
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
