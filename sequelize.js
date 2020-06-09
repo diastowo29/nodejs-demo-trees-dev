@@ -14,7 +14,7 @@ const sequelize_db = new Sequelize(process.env.DATABASE_URL, {
 
 const demo_table = demoModel(sequelize_db, Sequelize)
 
-sequelize_db.sync({ force: true })
+sequelize_db.sync()
   .then(() => {
     console.log(`Database & tables created!`)
     })
