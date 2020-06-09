@@ -26,6 +26,18 @@ router.get('/getall/', function(req, res, next) {
 	});
 });
 
+router.get('/delete', function(req, res, next) {
+	demo_table.destroy({
+		where: {
+			id: req.query.id
+		}
+	}).then(demo_delete => {
+		res.status(200).send({
+			demo_delete
+		});
+	})
+});
+
 router.post('/create/', function(req, res, next) {
 	demo_table.create({
 		name: req.body.name,
