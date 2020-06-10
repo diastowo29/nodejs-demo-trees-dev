@@ -17,6 +17,13 @@ router.get('/ketinggian', function(req, res, next) {
 	});
 });
 
+router.get('/kantin', function(req, res, next) {
+	res.status(200).send({
+		id_kartu: req.query.id_kartu,
+		status: req.query.status_kartu
+	})
+});
+
 router.get('/dashboard', function(req, res, next) {
 	res.render('dashboard', { title: 'Arduino Dashboard' });
 });
