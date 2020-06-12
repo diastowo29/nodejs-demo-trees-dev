@@ -9,6 +9,13 @@ router.get('/', function(req, res, next) {
 	})
 });
 
+router.get('/menu', function(req, res, next) {
+	res.status(200).send({
+		status: 'Ok',
+		id_kartu: req.query.id
+	})
+});
+
 router.get('/kantin', function(req, res, next) {
 	rfid_table.create({
 		id_kartu: req.query.id_kartu,
