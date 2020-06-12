@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize')
 const demoModel = require('./models/customer')
+const rfidModel = require('./models/rfid')
 
 const sequelize_db = new Sequelize(process.env.DATABASE_URL, {
   dialectOptions: {
@@ -12,7 +13,13 @@ const sequelize_db = new Sequelize(process.env.DATABASE_URL, {
   ssl: true
 })
 
+// const sequelize_db = new Sequelize('postgres', 'postgres', 'R@hasia', {
+//   host: 'localhost',
+//   dialect: 'postgres'
+// });
+
 const demo_table = demoModel(sequelize_db, Sequelize)
+const rfid_table = rfidModel(sequelize_db, Sequelize)
 
 sequelize_db.sync()
   .then(() => {
@@ -20,5 +27,6 @@ sequelize_db.sync()
     })
 
 module.exports = {
-    demo_table
+    demo_table,
+    rfid_table
 }
