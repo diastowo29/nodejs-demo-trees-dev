@@ -1,0 +1,193 @@
+extends layout
+
+block content
+  h1= title
+  table(class='table table-striped' style='width:30%')
+    thead
+      tr
+        th Makanan
+        th Harga
+        th Porsi
+        th Jumlah
+    tbody
+      tr
+        td Nasi + Ayam Geprek + Tahu Tempe
+        td Rp. 15.000
+        td
+          select(onchange='selectChange(this)')
+            option 0
+            option 1
+            option 2
+            option 3
+            option 4
+            option 5
+            option 6
+            option 7
+            option 8
+            option 9
+            option 10
+        td(id='totalGeprek') Rp. 30.000
+      tr
+        td Nasi Goreng
+        td Rp. 12.000
+        td
+          select
+            option 0
+            option 1
+            option 2
+            option 3
+            option 4
+            option 5
+            option 6
+            option 7
+            option 8
+            option 9
+            option 10
+        td Rp. 30.000
+      tr
+        td Mie Goreng
+        td Rp. 12.000
+        td
+          select
+            option 0
+            option 1
+            option 2
+            option 3
+            option 4
+            option 5
+            option 6
+            option 7
+            option 8
+            option 9
+            option 10
+        td Rp. 30.000
+      tr
+        td Kwetiau Goreng
+        td Rp. 12.000
+        td
+          select
+            option 0
+            option 1
+            option 2
+            option 3
+            option 4
+            option 5
+            option 6
+            option 7
+            option 8
+            option 9
+            option 10
+        td Rp. 30.000
+  table(class='table table-striped' style='width:30%')
+    thead
+      tr
+        th Minuman
+        th Harga
+        th Porsi
+        th Jumlah
+    tbody
+      tr
+        td Es Teh Manis
+        td Rp. 4.000
+        td
+          select
+            option 0
+            option 1
+            option 2
+            option 3
+            option 4
+            option 5
+            option 6
+            option 7
+            option 8
+            option 9
+            option 10
+        td Rp. 30.000
+      tr
+        td Teh Manis Hangat
+        td Rp. 3.000
+        td
+          select
+            option 0
+            option 1
+            option 2
+            option 3
+            option 4
+            option 5
+            option 6
+            option 7
+            option 8
+            option 9
+            option 10
+        td Rp. 30.000
+      tr
+        td Es Nutrisari
+        td Rp. 4.000
+        td
+          select
+            option 0
+            option 1
+            option 2
+            option 3
+            option 4
+            option 5
+            option 6
+            option 7
+            option 8
+            option 9
+            option 10
+        td Rp. 30.000
+      tr
+        td Es Goodday
+        td Rp. 5.000
+        td
+          select
+            option 0
+            option 1
+            option 2
+            option 3
+            option 4
+            option 5
+            option 6
+            option 7
+            option 8
+            option 9
+            option 10
+        td Rp. 30.000
+      tr
+        td Kopi panas
+        td Rp. 4.000
+        td
+          select
+            option 0
+            option 1
+            option 2
+            option 3
+            option 4
+            option 5
+            option 6
+            option 7
+            option 8
+            option 9
+            option 10
+        td Rp. 30.000
+      tr
+        td Mineral Water
+        td Rp. 3.500
+        td
+          select
+            option 0
+            option 1
+            option 2
+            option 3
+            option 4
+            option 5
+            option 6
+            option 7
+            option 8
+            option 9
+            option 10
+        td Rp. 30.000
+  h4 Total Biaya: Rp. 50.000
+
+  script(src="/javascripts/menu.js")

@@ -1,5 +1,3 @@
-console.log('hai')
-
 function goChooseMenu (id) {
-	window.location = '/arduino/menu?id=' + id;
+	window.location = '/arduino/kantin/menu?id=' + id;
 }
