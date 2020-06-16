@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize')
 const demoModel = require('./models/customer')
 const rfidModel = require('./models/rfid')
+const orderModel = require('./models/order')
 
 var sequelize_db;
 
@@ -25,6 +26,7 @@ if (process.env.DATABASE_URL === undefined) {
 
 const demo_table = demoModel(sequelize_db, Sequelize)
 const rfid_table = rfidModel(sequelize_db, Sequelize)
+const order_table = orderModel(sequelize_db, Sequelize)
 
 sequelize_db.sync()
   .then(() => {
@@ -33,5 +35,6 @@ sequelize_db.sync()
 
 module.exports = {
     demo_table,
-    rfid_table
+    rfid_table,
+    order_table
 }

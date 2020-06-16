@@ -105,9 +105,11 @@ function submitOrder () {
 	var url_string = window.location.href;
 	var url = new URL(url_string);
 	var id = url.searchParams.get('id');
+	var nama = url.searchParams.get('nama');
 	var orderSummary = {
 		order: {
 			id_kartu: id,
+			nama_kartu: nama,
 			order: {
 				geprek: geprekPorsi,
 				nasgor: nasgorPorsi,

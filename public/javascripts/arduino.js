@@ -1,3 +1,3 @@
-function goChooseMenu (id) {
-	window.location = '/arduino/kantin/menu?id=' + id;
+function goChooseMenu (id, nama) {
+	window.location = '/arduino/kantin/menu?id=' + id + '&nama=' + nama;
 }

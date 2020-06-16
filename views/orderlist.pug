@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+  h3= empty
+  each row in order_data
+    div(id=row.id)
+      h3='Pemesan: ' + row.nama
+      table(class='table table-striped' style='width:30%')
+        thead
+          tr
+            th Makanan/Minuman
+            th Porsi
+        each order in row.order
+          tbody
+            td=order.menu
+            td=order.jumlah
+      button(class='btn btn-info' id=row.id onclick='takeOrder(' + row.id + ')') Sudah Diantar
+
+  script(src="/javascripts/orderlist.js")
