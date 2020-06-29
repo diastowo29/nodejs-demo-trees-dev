@@ -131,7 +131,7 @@ function submitOrder () {
         contentType: 'application/json',
         success: function (data) {
         	console.log(data)
-        	// window.location = '/arduino/kantin/menu?id=' + id;
+        	window.location = '/arduino/dashboard/admin';
         },
         data: JSON.stringify(orderSummary)
     });
