@@ -35,7 +35,9 @@ router.get('/kantin', function(req, res, next) {
 			});
 		} else {
 			rfid_table.update({
-				status: 'OK'
+				status: 'OK',
+				status_kartu: req.query.status_kartu,
+				nama_kartu: req.query.nama_kartu
 			}, {
 				where: {
 					id_kartu: req.query.id_kartu
