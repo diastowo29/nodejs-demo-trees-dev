@@ -10,7 +10,7 @@ block content
         th Nama
     tbody
       each row in rfid_data
-        tr(onclick='goChooseMenu(' + row.id_kartu + ', "' + row.nama_kartu + '")')
+        tr(onclick='goChooseMenu("' + row.id_kartu + '", "' + row.nama_kartu + '")')
           td=row.id_kartu
           td=row.nama_kartu
 
