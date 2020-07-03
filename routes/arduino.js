@@ -15,6 +15,7 @@ router.get('/kantin/menu', function(req, res, next) {
 	})
 });
 
+/* ON CARD TAPPED */
 router.get('/kantin', function(req, res, next) {
 	rfid_table.findAll({
 		where: {
@@ -33,8 +34,16 @@ router.get('/kantin', function(req, res, next) {
 				})
 			});
 		} else {
-			res.status(200).send({
-				rfid: 'This CARD has already tapped'
+			rfid_table.update({
+				status: 'OK',
+				status_kartu: req.query.status_kartu,
+				nama_kartu: req.query.nama_kartu
+			}, {
+				where: {
+					id_kartu: req.query.id_kartu
+				}
+			}).then(rfid_table_update => {
+				res.status(200).send(rfid_table_update)
 			})
 		}
 	})
@@ -50,6 +59,15 @@ router.post('/kantin/order', function (req, res, next) {
 		order: JSON.stringify(orderParameter),
 		status: 'ORDER'
 	}).then(order_table_insert => {
+		rfid_table.update({
+			status: 'ORDER'
+		}, {
+			where: {
+				id_kartu: orderIdKartu
+			}
+		}).then(rfid_table_update => {
+
+		})
 		res.status(200).send({
 			order: order_table_insert
 		})
@@ -111,7 +129,11 @@ router.get('/kantin/delete', function(req, res, next) {
 });
 
 router.get('/dashboard/admin', function(req, res, next) {
-	rfid_table.findAll().then(rfid_table_all => {
+	rfid_table.findAll({
+		where: {
+			status: 'OK'
+		}
+	}).then(rfid_table_all => {
 	    res.render('dashboard', {
 	    	rfid_data: rfid_table_all,
 	    	title: 'Kantin RFID Dashboard' 
