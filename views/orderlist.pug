@@ -15,6 +15,6 @@ block content
           tbody
             td=order.menu
             td=order.jumlah
-      button(class='btn btn-info' id=row.id onclick='takeOrder(' + row.id + ')') Sudah Diantar
+      button(class='btn btn-info' id=row.id onclick='takeOrder(this)') Sudah Diantar
 
   script(src="/javascripts/orderlist.js")

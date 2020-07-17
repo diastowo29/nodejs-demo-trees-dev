@@ -1,7 +1,8 @@
-function takeOrder (id) {
+function takeOrder (btnOrder) {
     console.log('takeOrder')
-    console.log(id)
-	var divToHide = $('div#' + id + '')
+    let btnId = $(btnOrder).attr('id')
+    console.log(btnId)
+	var divToHide = $('div#' + btnId + '')
     console.log(divToHide)
 	// $.ajax({
  //        url: '/arduino/kantin/order/take?id=' + id,
